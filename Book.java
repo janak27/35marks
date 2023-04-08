@@ -33,6 +33,49 @@
 // 1. Take necessary input variable and call findBookWithMaximumPrice. For this method - The main method should print the Book
 //  object with the maximum of mentioned attribute as it is if the returned value is not null, or it should print 
 //  "No Book found with mentioned attribute."
+
+// 2. Take necessary input variable and call searchBookByTitle. For this method - The main method should print the Book object 
+// details as it is, if the returned value is not null or it should print "No Book found with mentioned attribute."
+
+// The above mentioned static methods should be called from the main method. Also write the code for accepting the inputs and 
+// printing the outputs. Don't use any static test or formatting for printing the result. Just invoke the method and print the
+// result.
+
+// All String comparison needs to be in case sensitive.
+
+// Input:
+
+// 1
+// 845
+// Bengali
+// Arijit
+// 525.50
+// 2
+// 456
+// English
+// Raju
+// 412.30
+// 3
+// 1022
+// History
+// Kaka
+// 525.50
+// 4
+// 125
+// geography
+// MN
+// 524
+// English
+
+// Output:
+
+// 1 Bengali
+// 3 History
+// 2
+// 456
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------
   import java.util.*;
 
@@ -115,43 +158,3 @@ class Book{
         this.price = price;
     }
 }
-
-// 2. Take necessary input variable and call searchBookByTitle. For this method - The main method should print the Book object 
-// details as it is, if the returned value is not null or it should print "No Book found with mentioned attribute."
-
-// The above mentioned static methods should be called from the main method. Also write the code for accepting the inputs and 
-// printing the outputs. Don't use any static test or formatting for printing the result. Just invoke the method and print the
-// result.
-
-// All String comparison needs to be in case sensitive.
-
-// Input:
-
-// 1
-// 845
-// Bengali
-// Arijit
-// 525.50
-// 2
-// 456
-// English
-// Raju
-// 412.30
-// 3
-// 1022
-// History
-// Kaka
-// 525.50
-// 4
-// 125
-// geography
-// MN
-// 524
-// English
-
-// Output:
-
-// 1 Bengali
-// 3 History
-// 2
-// 456
