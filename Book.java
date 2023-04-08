@@ -33,6 +33,88 @@
 // 1. Take necessary input variable and call findBookWithMaximumPrice. For this method - The main method should print the Book
 //  object with the maximum of mentioned attribute as it is if the returned value is not null, or it should print 
 //  "No Book found with mentioned attribute."
+-------------------------------------------------------------------------------------------------------------------------------------------
+  import java.util.*;
+
+public class Solution{
+    public static void main(String[] args){
+        Scanner sc =  new Scanner(System.in);
+        Book[] book = new Book[4];
+        for(int i = 0; i < 4; i++){
+            int a = sc.nextInt();sc.nextLine();
+            int b = sc.nextInt();sc.nextLine();
+            String c = sc.nextLine();
+            String d = sc.nextLine();
+            double e = sc.nextDouble();sc.nextLine();
+            book[i] = new Book(a,b,c,d,e);
+        }
+        
+        String input1 = sc.nextLine();
+        
+        Book[] ans = findBookWithMaximumPrice(book);
+        if(ans!=null)
+        {
+            for (int i = 0; i < ans.length; i++) {
+                System.out.println(ans[i].id+" "+ans[i].title);
+            }
+        }
+        else
+        {
+            System.out.println("No Book found with mentioned attribute.");
+        }
+        
+        Book ans2 = searchBookByTitle(book,input1);
+         if(ans2!=null)
+        {
+            System.out.println(ans2.id);
+            System.out.println(ans2.pages);
+        }
+    }
+    public static Book searchBookByTitle(Book[] book,String title){
+        for(int i = 0; i < book.length; i++){
+            if(book[i].title.equalsIgnoreCase(title)){
+                return book[i];
+            }
+        }
+        return null;
+    } 
+    
+    public static Book[] findBookWithMaximumPrice(Book[] book){
+        Book[] temp = new Book[0];
+        double max = 0;
+        for(int i = 0; i < 4; i++){
+            if(book[i].price > max){
+                max = book[i].price;
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            if(book[i].price == max){
+                temp =  Arrays.copyOf(temp,temp.length + 1);
+                temp[temp.length - 1] = book[i];
+            }
+        }
+        
+        if(temp.length>0)
+        {
+            return temp;
+        }
+        return null;
+    }
+}
+
+class Book{
+    int id,pages;
+    String title,author;
+    double price;
+    
+    Book(int id,int pages,String title,String author, double price){
+        this.id = id;
+        this.pages = pages;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+}
 
 // 2. Take necessary input variable and call searchBookByTitle. For this method - The main method should print the Book object 
 // details as it is, if the returned value is not null or it should print "No Book found with mentioned attribute."
